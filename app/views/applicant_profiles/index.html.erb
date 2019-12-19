@@ -1,0 +1,23 @@
+<h1>Perfil do Candidato</h1>
+
+<% if @applicant_profiles.empty? %>
+    <p>Perfil ainda não cadastrado. Favor cadastrar!</p>
+    <p>Para acesso às vagas, favor cadastrar perfil.</p>
+    <p><%= link_to 'Criar perfil', new_applicant_profile_path %></p>
+<% else %>
+    <p><%= link_to 'Vagas', applies_path %></p>
+   
+    <% @applicant_profiles.each do |applicant_profile| %>
+        <p>Nome: <%= applicant_profile.name %></p>
+        <p>Nome social: <%= applicant_profile.social_name %></p>
+        <p>Data de aniversário: <%= applicant_profile.date_of_birth %></p>
+        <p>Educação: <%= applicant_profile.education %></p>
+        <p>Descrição do candidato: <%= applicant_profile.applicant_description %></p>
+        <p>Experiência: <%= applicant_profile.experience %></p>
+        
+        <p><%= link_to 'Editar perfil', edit_applicant_profile_path(applicant_profile) %></p>
+        <p><%= link_to 'Deletar perfil', applicant_profile_path(applicant_profile), method: :delete %></p>
+    <% end %>
+<% end %>
+
+<p><%= link_to 'Voltar', root_path %></p>

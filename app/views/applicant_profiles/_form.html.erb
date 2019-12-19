@@ -1,0 +1,27 @@
+<%= form_for applicant_profile do |f| %>
+    <div>
+      <%= f.label :name, 'Nome' %>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <%= f.label :social_name, 'Nome social' %>
+      <%= f.text_field :social_name %>
+    </div>
+    <div>
+      <%= f.label :date_of_birth, 'Data de aniversário' %>
+      <%= f.text_field :date_of_birth %>
+    </div>
+    <div>
+      <%= f.label :education, 'Educação' %>
+      <%= f.text_field :education %>
+    </div>
+    <div>
+      <%= f.label :applicant_description, 'Descrição' %>
+      <%= f.text_field :applicant_description %>
+    </div> 
+    <div>
+      <%= f.label :experience, 'Experiência' %>
+      <%= f.text_field :experience %>
+    </div> 
+    <%= f.submit 'Enviar' %>
+<% end %>

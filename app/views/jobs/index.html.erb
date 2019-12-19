@@ -1,0 +1,21 @@
+<h1>Vagas</h1>
+
+<p><%= link_to 'Criar vaga', new_job_path %></p>
+
+<% if @jobs.empty? %>
+  <p>Não existem vagas cadastradas no sistema.</p>
+<% end %>
+
+<% @jobs.each do |job| %>
+  <p>Titulo: <%= job.title %></p>
+  <p>Descrição: <%= job.description %></p>
+  <p>Habilidades: <%= job.desired_skill %></p>
+  <p>Faixa Salarial: <%= job.salary_range %></p>
+  <p>Nível: <%= job.level %></p>
+  <p>Data Limite: <%= job.deadline %></p>
+  <p>Região: <%= job.region %></p>
+  <p><%= link_to 'Editar vaga', edit_job_path(job) %></p>
+  <p><%= link_to 'Deletar vaga', job_path(job), method: :delete %></p>
+<% end %>
+
+<p><%= link_to 'Voltar', root_path %></p>

@@ -1,0 +1,18 @@
+<h1><%= @job.title %></h1>
+<dl>
+  <dt>Descrição:</dt>
+  <dd><%= @job.description %></dd>
+  <dt> Habilidades desejadas:</dt>
+  <dd><%= @job.desired_skill %></dd>
+  <dt>Faixa Sararial:</dt>
+  <dd><%= @job.salary_range %></dd>
+  <dt>Nivel:</dt>
+  <dd><%= @job.level %></dd>
+  <dt>Tempo limite:</dt>
+  <dd><%= @job.deadline %></dd>
+  <dt>Região:</dt>
+  <dd><%= @job.region %></dd>
+
+</dl>
+
+<p><%= link_to 'Voltar', root_path %></p>

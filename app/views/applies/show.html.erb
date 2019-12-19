@@ -1,0 +1,9 @@
+<h1><%= @apply.applicant_name %></h1>
+<dl>
+  <dt>E-mail:</dt>
+  <dd><%= @apply.email %></dd>
+  <dt> Vaga:</dt>
+  <dd><%= @apply.job.title %></dd>
+</dl>
+
+<p><%= link_to 'Voltar', root_path %></p>

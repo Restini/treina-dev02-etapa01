@@ -1,0 +1,14 @@
+<h1><%= @applicant_profile.name %></h1>
+<dl>
+  <dt>Nome social:</dt>
+  <dd><%= @applicant_profile.social_name %></dd>
+  <dt> Data de aniversário:</dt>
+  <dd><%= @applicant_profile.date_of_birth %></dd>
+  <dt>Educação:</dt>
+  <dd><%= @applicant_profile.education %></dd>
+  <dt>Descrição:</dt>
+  <dd><%= @applicant_profile.applicant_description %></dd>
+  <dt>Experiência:</dt>
+  <dd><%= @applicant_profile.experience %></dd>
+</dl>
+<p><%= link_to 'Voltar', applicant_profiles_path %></p>

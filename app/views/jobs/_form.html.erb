@@ -1,0 +1,31 @@
+<%= form_for job do |f| %>
+    <div>
+      <%= f.label :title, 'Título' %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :description, 'Descrição' %>
+      <%= f.text_field :description %>
+    </div>
+    <div>
+      <%= f.label :desired_skill, 'Habilidades desejadas' %>
+      <%= f.text_field :desired_skill %>
+    </div>
+    <div>
+      <%= f.label :salary_range, 'Faixa Salarial' %>
+      <%= f.text_field :salary_range %>
+    </div>
+    <div>
+      <%= f.label :level, 'Nível' %>
+      <%= f.text_field :level %>
+    </div> 
+    <div>
+      <%= f.label :deadline, 'Data limite' %>
+      <%= f.text_field :deadline %>
+    </div> 
+    <div>
+      <%= f.label :region, 'Região' %>
+      <%= f.text_field :region %>
+    </div> 
+    <%= f.submit 'Enviar' %>
+<% end %>
