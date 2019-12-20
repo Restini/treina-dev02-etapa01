@@ -16,7 +16,8 @@ feature 'Headhunter view apply' do
                              date_of_birth:30/12/1960, education:'Superior',
                              applicant_description:'Programador', 
                              experience:'5 anos')
-    visit root_path
+    
+    visit applicant_profiles_path
     click_on('Vagas')
     click_on('Efetuar inscrição')
     fill_in 'Nome', with: 'Steve Jobs'

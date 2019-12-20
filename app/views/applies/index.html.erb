@@ -2,15 +2,14 @@
 
 <% if @applies.empty? %>
   <p>Nenhuma inscrição efetuada.</p>
+<% else %>
+  <% @applies.each do |apply| %>
+    <p>Nome: <%= apply.applicant_name %></p>
+    <p>Email: <%= apply.email %></p>
+    <p>Vaga: <%= apply.job.title %></p>
+    <p><%= link_to 'Deletar candidatura', apply_path(apply), method: :delete %></p>
+  <% end %>
 <% end %>
 
 <p><%= link_to 'Efetuar inscrição', new_apply_path %></p>
-
-<% @applies.each do |apply| %>
-  <p>Nome: <%= apply.applicant_name %></p>
-  <p>Email: <%= apply.email %></p>
-  <p>Vagas: <%= apply.job.title %></p>
-  <p><%= link_to 'Deletar candidatura', apply_path(apply), method: :delete %></p>
-<% end %>
-
 <p><%= link_to 'Voltar', root_path %></p>
