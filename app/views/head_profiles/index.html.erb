@@ -1,0 +1,19 @@
+<h1>Painel de acesso</h1>
+
+<% if @head_profiles.empty? %>
+    <p>Perfil ainda não cadastrado.</p>
+    <p>Para ter acesso aos canditados e vagas, favor cadastrar perfil.</p>
+    <p><%= link_to 'Criar perfil', new_head_profile_path %></p>
+<% else %>
+    <p><%= link_to 'Acesso ao painel de vagas', jobs_path %></p> 
+    <p><%= link_to 'Candidatos cadastrados', applies_path %></p>
+    <p><h2>Perfil</h2></p>
+<% @head_profiles.each do |head_profile| %>
+    <p>Nome: <%= head_profile.name %></p>
+    <p>Empresa: <%= head_profile.company %></p>
+    <p><%= link_to 'Editar perfil', edit_head_profile_path(head_profile) %></p>
+    <p><%= link_to 'Deletar perfil', head_profile_path(head_profile), method: :delete %></p>
+    <% end %>
+<% end %>
+
+<p><%= link_to 'Voltar', root_path %></p>

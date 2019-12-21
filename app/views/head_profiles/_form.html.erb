@@ -1,0 +1,13 @@
+<h2>Perfil</h2>
+
+<%= form_for head_profile do |f| %>
+    <div>
+      <%= f.label :name, 'Nome' %>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+    <%= f.label :company, 'Empresa' %>
+    <%= f.text_field :company %>
+    </div>
+    <%= f.submit 'Enviar' %>
+  <% end %>

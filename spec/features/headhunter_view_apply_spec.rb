@@ -2,7 +2,9 @@ require 'rails_helper'
 
 feature 'Headhunter view apply' do
   scenario 'successfully' do
-    visit root_path
+    HeadProfile.create!(name:'Bill Gates', company:'CampusCode')
+    
+    visit head_profiles_path
 
     expect(page).to have_link('Candidatos cadastrados')
   end

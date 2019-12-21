@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :jobs
   resources :applicant_profiles
   resources :applies
+  resources :head_profiles
 end
