@@ -2,6 +2,9 @@ require 'rails_helper'
 
 feature 'Visitor open home page' do
   scenario 'successfully' do
+    user = User.create!(email:'test@test.com', password:'123456')
+    login_as(user, :scope => :user)
+
     visit root_path
 
     expect(page).to have_link('Perfil')
@@ -10,6 +13,9 @@ feature 'Visitor open home page' do
   end
   
   scenario 'Headhunter create perfil' do
+    user = User.create!(email:'test@test.com', password:'123456')
+    login_as(user, :scope => :user)
+    
     visit head_profiles_path
     
     click_on('Criar perfil')

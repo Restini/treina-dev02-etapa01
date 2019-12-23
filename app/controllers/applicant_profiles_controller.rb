@@ -1,5 +1,6 @@
 class ApplicantProfilesController < ApplicationController
-
+    before_action :authenticate_user!
+    
     def index
       @applicant_profiles = ApplicantProfile.all
     end

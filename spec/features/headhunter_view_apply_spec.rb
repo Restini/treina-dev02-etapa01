@@ -3,7 +3,9 @@ require 'rails_helper'
 feature 'Headhunter view apply' do
   scenario 'successfully' do
     HeadProfile.create!(name:'Bill Gates', company:'CampusCode')
-    
+    user = User.create!(email:'test@test.com', password:'123456')
+    login_as(user, :scope => :user)
+
     visit head_profiles_path
 
     expect(page).to have_link('Candidatos cadastrados')
@@ -18,6 +20,8 @@ feature 'Headhunter view apply' do
                              date_of_birth:30/12/1960, education:'Superior',
                              applicant_description:'Programador', 
                              experience:'5 anos')
+    user = User.create!(email:'test@test.com', password:'123456')
+    login_as(user, :scope => :user)
     
     visit applicant_profiles_path
     click_on('Vagas')

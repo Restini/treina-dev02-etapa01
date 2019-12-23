@@ -1,5 +1,6 @@
 class AppliesController < ApplicationController
-
+    before_action :authenticate_user!
+    
     def index
       @applies = Apply.all
     end

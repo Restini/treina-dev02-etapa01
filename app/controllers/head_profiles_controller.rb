@@ -1,5 +1,6 @@
 class HeadProfilesController < ApplicationController
-
+    before_action :authenticate_user!
+    
     def index
       @head_profiles = HeadProfile.all
     end
