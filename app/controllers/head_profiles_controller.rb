@@ -10,7 +10,6 @@ class HeadProfilesController < ApplicationController
 
     def new
       @head_profile = HeadProfile.new
-      set_collections
     end
 
     def create
@@ -40,13 +39,10 @@ class HeadProfilesController < ApplicationController
       redirect_to root_path
     end
     
-    def set_collections
-      #@jobs = Job.all
-    end
-    
     private
 
     def head_profile_params
       params.require(:head_profile).permit(:name, :company)
     end
+
 end

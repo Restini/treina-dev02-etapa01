@@ -1,0 +1,15 @@
+<h1>Adicionar Proposta</h1>
+
+<%= form_for :proposal, url: proposals_path do |f| %>
+    <div>
+      <%= f.label :title, 'Nome do candidato' %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :body, 'Texto' %>
+      <%= f.text_area :body %>
+    </div>
+    <%= f.submit 'Enviar' %>
+<% end %>
+
+<p><%= link_to 'Voltar', proposals_path %></p>

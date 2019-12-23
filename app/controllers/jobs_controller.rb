@@ -46,4 +46,5 @@ class JobsController < ApplicationController
                                   :desired_skill,:salary_range,
                                   :level, :deadline, :region)
     end
+
 end

@@ -7,6 +7,7 @@
 <% else %>
     <p><%= link_to 'Acesso ao painel de vagas', jobs_path %></p> 
     <p><%= link_to 'Candidatos cadastrados', applies_path %></p>
+    <p><%= link_to 'Fazer proposta', proposals_path %></p>
     <p><h2>Perfil</h2></p>
 <% @head_profiles.each do |head_profile| %>
     <p>Nome: <%= head_profile.name %></p>

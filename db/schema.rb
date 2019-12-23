@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_21_005749) do
+ActiveRecord::Schema.define(version: 2019_12_23_002342) do
 
   create_table "applicant_profiles", force: :cascade do |t|
     t.string "name"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 2019_12_21_005749) do
     t.index ["job_id"], name: "index_applies_on_job_id"
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.string "username"
+    t.text "body"
+    t.integer "proposal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["proposal_id"], name: "index_comments_on_proposal_id"
+  end
+
   create_table "head_profiles", force: :cascade do |t|
     t.string "name"
     t.string "company"
@@ -47,6 +56,13 @@ ActiveRecord::Schema.define(version: 2019_12_21_005749) do
     t.string "level"
     t.date "deadline"
     t.string "region"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "proposals", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

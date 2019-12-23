@@ -1,0 +1,13 @@
+<h3>Adicionar Comentário</h3>
+
+<%= form_for( [@proposal, @proposal.comments.build] ) do |f| %>
+    <div>
+      <%= f.label :username, 'Nome' %>
+      <%= f.text_field :username %>
+    </div>
+    <div>
+      <%= f.label :body, 'Texto' %>
+      <%= f.text_area :body %>
+    </div>
+    <%= f.submit 'Comentar ' %>
+<% end %>

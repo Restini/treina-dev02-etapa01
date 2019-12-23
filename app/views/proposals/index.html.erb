@@ -1,0 +1,10 @@
+<h1>Proposta</h1>
+<% @proposals.each do |proposal| %>
+    <h3><%= proposal.title %></h3>
+    <p><%= proposal.body %></p>
+    <p><%= link_to 'Deletar proposta', proposal_path(proposal), method: :delete %></p>
+    <p><%= link_to 'Fazer Comentário', proposal_path(proposal) %></p>
+<% end %>
+
+<p><%= link_to 'Criar Proposta', new_proposal_path %></p>
+<p><%= link_to 'Voltar', root_path %></p>

@@ -7,6 +7,7 @@
 <% else %>
     <p><%= link_to 'Vagas', applies_path %></p>
     <p><%= link_to 'Inscrições efetuadas', applies_path%></p>
+    <p><%= link_to 'Ver proposta', proposals_path %></p>
     <p><h2>Perfil</h2></p>
     <% @applicant_profiles.each do |applicant_profile| %>
     <p>Nome: <%= applicant_profile.name %></p>

@@ -1,0 +1,15 @@
+<h1>Editar Proposta</h1>
+
+<%= form_for :proposal, url: proposal_path(@proposal), method: :patch do |f| %>
+    <div>
+      <%= f.label :title, 'Titulo' %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :body, 'Texto' %>
+      <%= f.text_area :body %>
+    </div>
+    <%= f.submit 'Enviar' %>
+<% end %>
+
+<p><%= link_to 'Voltar', proposals_path %></p>

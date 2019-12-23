@@ -10,8 +10,8 @@
       <%= f.text_field :email %>
     </div>
     <div>
-    <%= f.label :job_id, 'Vagas' %>
-    <%= f.collection_select(:job_id, @jobs, :id, :title)  %>
+      <%= f.label :job_id, 'Vagas' %>
+      <%= f.collection_select(:job_id, @jobs, :id, :title)  %>
     </div>
-    <%= f.submit 'Enviar' %>
+      <%= f.submit 'Enviar' %>
   <% end %>
