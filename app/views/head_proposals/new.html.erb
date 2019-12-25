@@ -1,6 +1,6 @@
-<h1>Adicionar Proposta</h1>
+<h1>Adicionar Proposta HeadHunter</h1>
 
-<%= form_for :proposal, url: proposals_path do |f| %>
+<%= form_for :head_proposal, url: head_proposals_path do |f| %>
     <div>
       <%= f.label :title, 'Título' %>
       <%= f.text_field :title %>
@@ -12,4 +12,4 @@
     <%= f.submit 'Enviar' %>
 <% end %>
 
-<p><%= link_to 'Voltar', proposals_path %></p>
+<p><%= link_to 'Voltar', head_proposals_path %></p>

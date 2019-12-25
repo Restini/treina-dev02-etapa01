@@ -1,0 +1,15 @@
+<h1>Proposta Headhunter</h1>
+
+<% if @applicant_profiles.empty? %>
+  <%= 'Não existem candidatos cadastrados' %>
+<% else %>
+    <% @head_proposals.each do |proposal| %>
+      <h3><%= proposal.title %></h3>
+      <p><%= proposal.body %></p>
+      <p><%= link_to 'Deletar proposta', head_proposal_path(proposal), method: :delete %></p>
+      <p><%= link_to 'Fazer Comentário', head_proposal_path(proposal) %></p>
+      <% end %>
+    <p><%= link_to 'Criar Proposta', new_head_proposal_path %></p>
+<% end %>
+
+<p><%= link_to 'Voltar', root_path %></p>

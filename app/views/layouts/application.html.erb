@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Treina</title>
+    <title>Jobs</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,17 @@
   </head>
 
   <body>
+
+    <% if user_signed_in? %>
+      <ul>
+        <li><%= link_to "Sair", destroy_user_session_path, method: :delete %></li>
+      </ul>
+    <% else %>
+      <ul>
+        <li><%= link_to "Entrar", new_user_session_path %></li>
+      </ul>
+    <% end %>  
+
     <%= notice %>
     <%= alert %>
     <%= yield %>

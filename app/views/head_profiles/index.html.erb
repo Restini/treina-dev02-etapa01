@@ -7,7 +7,8 @@
 <% else %>
     <p><%= link_to 'Acesso ao painel de vagas', jobs_path %></p> 
     <p><%= link_to 'Candidatos cadastrados', applies_path %></p>
-    <p><%= link_to 'Fazer proposta', proposals_path %></p>
+    <p><%= link_to 'Fazer proposta', head_proposals_path %></p>
+    <p><%= link_to 'Fazer comentário', head_proposals_path %></p>
     <p><h2>Perfil</h2></p>
 <% @head_profiles.each do |head_profile| %>
     <p>Nome: <%= head_profile.name %></p>
@@ -15,6 +16,20 @@
     <p><%= link_to 'Editar perfil', edit_head_profile_path(head_profile) %></p>
     <p><%= link_to 'Deletar perfil', head_profile_path(head_profile), method: :delete %></p>
     <% end %>
+<% end %>
+
+<h3>Contra-proposta recebida</h3>
+
+<% @proposals.each do |proposal| %>
+    <p>Título: <%= proposal.title %></p>
+    <p>Texto: <%= proposal.body %></p>
+<% end %>
+
+<h3>Comentário recebido</h3>
+
+<% @comments.each do |comment| %>
+    <p>Nome: <%= comment.username %></p>
+    <p>Texto: <%= comment.body %></p>
 <% end %>
 
 <p><%= link_to 'Voltar', root_path %></p>

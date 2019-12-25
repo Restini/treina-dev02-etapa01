@@ -2,6 +2,7 @@ class ProposalsController < ApplicationController
     before_action :authenticate_user!
     
     def index
+      @head_profiles = HeadProfile.all
       @proposals = Proposal.all
     end
 

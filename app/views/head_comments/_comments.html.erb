@@ -1,0 +1,9 @@
+<h3>Comentários</h3>
+
+<% @head_proposal.head_comments.each do |comment| %>
+  <%= comment.username %>
+  <%= comment.body %>
+
+  <p><%= link_to 'Deletar', [comment.head_proposal, comment], method: :delete,
+                            data: {confirm: 'Tem certeza?'}  %></p>
+<% end %>

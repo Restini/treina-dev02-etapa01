@@ -1,0 +1,15 @@
+<h1>Editar Proposta Headhunter</h1>
+
+<%= form_for :head_proposal, url: head_proposal_path(@head_proposal), method: :patch do |f| %>
+    <div>
+      <%= f.label :title, 'Titulo' %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :body, 'Texto' %>
+      <%= f.text_area :body %>
+    </div>
+    <%= f.submit 'Enviar' %>
+<% end %>
+
+<p><%= link_to 'Voltar', head_proposals_path %></p>

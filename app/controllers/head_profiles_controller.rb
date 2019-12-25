@@ -2,6 +2,8 @@ class HeadProfilesController < ApplicationController
     before_action :authenticate_user!
     
     def index
+      @comments = Comment.all
+      @proposals = Proposal.all
       @head_profiles = HeadProfile.all
     end
 
