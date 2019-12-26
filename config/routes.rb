@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :applicant_profiles
   resources :applies
   resources :head_profiles
-  
+ 
   resources :proposals do
     resources :comments
   end

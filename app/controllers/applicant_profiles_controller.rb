@@ -1,12 +1,12 @@
 class ApplicantProfilesController < ApplicationController
     before_action :authenticate_user!
     
-    def index
-      @head_comments = HeadComment.all
-      @head_proposals = HeadProposal.all
-      @applicant_profiles = ApplicantProfile.all
-    end
-
+   def index
+        @users = User.all
+        @head_comments = HeadComment.all
+        @head_proposals = HeadProposal.all
+        @applicant_profiles = ApplicantProfile.all
+   end  
     def show
       @applicant_profile = ApplicantProfile.find(params[:id])
     end

@@ -1,11 +1,11 @@
 <h1>Adicionar Proposta HeadHunter</h1>
 
 <%= form_for :head_proposal, url: head_proposals_path do |f| %>
-    <div>
+    <div class="form-group">
       <%= f.label :title, 'Título' %>
       <%= f.text_field :title %>
     </div>
-    <div>
+    <div class="form-group">
       <%= f.label :body, 'Texto' %>
       <%= f.text_area :body %>
     </div>

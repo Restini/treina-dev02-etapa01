@@ -13,3 +13,40 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ .container { 
+    margin: 0 auto; 
+    width: 940px; } 
+
+ul li{
+  display: inline; /* lista em linha */
+       
+} 
+
+.menu-opcoes { 				/* Uso do Class */
+      color: black;
+      margin-left: 10px;
+}
+
+p { 
+color: black; 
+background-color: white; 
+font-size: 15px;
+text-align: left;
+line-height: 25px;  
+letter-spacing: 2px;
+word-spacing: 5px;  
+text-indent: 13px;  
+}
+
+body { 
+background: white;
+margin-left: 100px;
+margin-top: 25px;		
+}
+
+th, td {
+  padding: 10px;
+}

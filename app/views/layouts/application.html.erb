@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <title>Jobs</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,19 +13,26 @@
   </head>
 
   <body>
-
+  
     <% if user_signed_in? %>
-      <ul>
-        <li><%= link_to "Sair", destroy_user_session_path, method: :delete %></li>
-      </ul>
+      <nav class="navbar navbar-default">
+       <div class="container-fluid">
+       <div class="navbar-header">
+        <a class="navbar-brand" >Jobs | treina-dev02-etapa01</a>
+       </div>
+        <ul class="nav navbar-nav">
+         <li class="active"><%= link_to 'Home', root_path %></li>
+         <li><%= link_to "Sair", destroy_user_session_path, method: :delete %></li>
+        </ul>
+       </div>
+      </nav>
     <% else %>
-      <ul>
-        <li><%= link_to "Entrar", new_user_session_path %></li>
-      </ul>
+       <li><%= link_to "Jobs | treina-dev02-etapa01", new_user_session_path %></li>
     <% end %>  
-
+    
     <%= notice %>
     <%= alert %>
     <%= yield %>
+
   </body>
 </html>

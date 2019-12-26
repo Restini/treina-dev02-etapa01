@@ -1,8 +1,19 @@
-<h1>Controle de usuários</h1>
+<h2>Controle de acesso</h2>
 
-  <% @users.each do |user| %>
-    <p>Email: <%= user.email %></p>
-  <% end %>
+<table>
+  <thead>
+    <tr>
+      <th><h3>E-mail</h3></th>
+      <th><h3>Role</h3></th>
+    </tr>
+  </thead>
 
-  <p><%= link_to 'Voltar', root_path %></p>
-  
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <th ><%= user.email %></th>
+        <th ><%= user.role %></th>
+      </tr>
+      <% end %>
+  <tbody>
+<table>

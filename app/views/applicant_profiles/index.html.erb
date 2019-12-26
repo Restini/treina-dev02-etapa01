@@ -1,43 +1,45 @@
-<h1>Painel de acesso</h1>
+<% if policy(@applicant_profiles).index?%>
 
-<% if @applicant_profiles.empty? %>
-    <p>Perfil ainda não cadastrado.</p>
-    <p>Para ter acesso às vagas, favor cadastrar perfil.</p>
-    <p><%= link_to 'Criar perfil', new_applicant_profile_path %></p>
-<% else %>
-    <p><%= link_to 'Vagas', applies_path %></p>
-    <p><%= link_to 'Inscrições efetuadas', applies_path%></p>
-    
-    <p><%= link_to 'Fazer proposta', proposals_path%></p>
-    <p><%= link_to 'Responder proposta/comentário', proposals_path%></p>
+    <h1>Painel de acesso</h1>
+
+    <% if @applicant_profiles.empty? %>
+        <p>Perfil ainda não cadastrado.</p>
+        <p>Para ter acesso às vagas, favor cadastrar perfil.</p>
+        <p><%= link_to 'Criar perfil', new_applicant_profile_path %></p>
+    <% else %>
+        <p><%= link_to 'Vagas', applies_path %></p>
+        <p><%= link_to 'Inscrições efetuadas', applies_path%></p>
         
-    <p><h2>Perfil</h2></p>
-    <% @applicant_profiles.each do |applicant_profile| %>
-    <p>Nome: <%= applicant_profile.name %></p>
-    <p>Nome social: <%= applicant_profile.social_name %></p>
-    <p>Data de aniversário: <%= applicant_profile.date_of_birth %></p>
-    <p>Educação: <%= applicant_profile.education %></p>
-    <p>Descrição do candidato: <%= applicant_profile.applicant_description %></p>
-    <p>Experiência: <%= applicant_profile.experience %></p>
-    
-    <p><%= link_to 'Editar perfil', edit_applicant_profile_path(applicant_profile) %></p>
-    <p><%= link_to 'Deletar perfil', applicant_profile_path(applicant_profile), method: :delete %></p>
+        <p><%= link_to 'Fazer proposta', proposals_path%></p>
+        <p><%= link_to 'Responder proposta/comentário', proposals_path%></p>
+
+        <p><h2>Perfil</h2></p>
+        <% @applicant_profiles.each do |applicant_profile| %>
+        <p>Nome: <%= applicant_profile.name %></p>
+        <p>Nome social: <%= applicant_profile.social_name %></p>
+        <p>Data de aniversário: <%= applicant_profile.date_of_birth %></p>
+        <p>Educação: <%= applicant_profile.education %></p>
+        <p>Descrição do candidato: <%= applicant_profile.applicant_description %></p>
+        <p>Experiência: <%= applicant_profile.experience %></p>
+        
+        <p><%= link_to 'Editar perfil', edit_applicant_profile_path(applicant_profile) %></p>
+        <p><%= link_to 'Deletar perfil', applicant_profile_path(applicant_profile), method: :delete %></p>
+        <% end %>
     <% end %>
+
+    <h4 style="background-color:rgb(241, 255, 183);" ><strong>Proposta recebida</strong></h4>
+
+        <% @head_proposals.each do |proposal| %>
+            <p>Título: <%= proposal.title %></p>
+            <p>Mensagem: <%= proposal.body %></p>
+        <% end %>  
+
+    <h4 style="background-color:rgb(241, 255, 183);" ><strong>Comentário recebido</strong></h4>
+    
+        <% @head_comments.each do |comment| %>
+            <p>Nome: <%= comment.username %></p>
+            <p>Mensagem: <%= comment.body %></p>
+        <% end %>
+<% else %>
+    <p>Usuário não autorizado.</p>
 <% end %>
-
-<h3>Proposta recebida</h3>
-
-<% @head_proposals.each do |proposal| %>
-    <p>Título: <%= proposal.title %></p>
-    <p>Texto: <%= proposal.body %></p>
-<% end %>
-
-
-<h3>Comentário recebido</h3>
-
-<% @head_comments.each do |comment| %>
-    <p>Nome: <%= comment.username %></p>
-    <p>Texto: <%= comment.body %></p>
-<% end %>
-
-<p><%= link_to 'Voltar', root_path %></p>

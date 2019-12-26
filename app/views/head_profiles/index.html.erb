@@ -1,35 +1,38 @@
-<h1>Painel de acesso</h1>
+<% if policy(@head_profiles).index?%>
 
-<% if @head_profiles.empty? %>
-    <p>Perfil ainda não cadastrado.</p>
-    <p>Para ter acesso aos canditados e vagas, favor cadastrar perfil.</p>
-    <p><%= link_to 'Criar perfil', new_head_profile_path %></p>
-<% else %>
-    <p><%= link_to 'Acesso ao painel de vagas', jobs_path %></p> 
-    <p><%= link_to 'Candidatos cadastrados', applies_path %></p>
-    <p><%= link_to 'Fazer proposta', head_proposals_path %></p>
-    <p><%= link_to 'Fazer comentário', head_proposals_path %></p>
-    <p><h2>Perfil</h2></p>
-<% @head_profiles.each do |head_profile| %>
-    <p>Nome: <%= head_profile.name %></p>
-    <p>Empresa: <%= head_profile.company %></p>
-    <p><%= link_to 'Editar perfil', edit_head_profile_path(head_profile) %></p>
-    <p><%= link_to 'Deletar perfil', head_profile_path(head_profile), method: :delete %></p>
+    <h1>Painel de acesso</h1>
+
+    <% if @head_profiles.empty? %>
+        <p>Perfil ainda não cadastrado.</p>
+        <p>Para ter acesso aos canditados e vagas, favor cadastrar perfil.</p>
+        <p><%= link_to 'Criar perfil', new_head_profile_path %></p>
+    <% else %>
+        <p><%= link_to 'Acesso ao painel de vagas', jobs_path %></p> 
+        <p><%= link_to 'Candidatos cadastrados', applies_path %></p>
+        <p><%= link_to 'Fazer proposta', head_proposals_path %></p>
+        <p><%= link_to 'Fazer comentário', head_proposals_path %></p>
+        <p><h2>Perfil</h2></p>
+    <% @head_profiles.each do |head_profile| %>
+        <p>Nome: <%= head_profile.name %></p>
+        <p>Empresa: <%= head_profile.company %></p>
+        <p><%= link_to 'Editar perfil', edit_head_profile_path(head_profile) %></p>
+        <p><%= link_to 'Deletar perfil', head_profile_path(head_profile), method: :delete %></p>
+        <% end %>
     <% end %>
+
+    <h4 style="background-color:rgb(241, 255, 183);" ><strong>Contra-proposta recebida</strong></h4>
+
+        <% @proposals.each do |proposal| %>
+            <p>Título: <%= proposal.title %></p>
+            <p>Texto: <%= proposal.body %></p>
+        <% end %>
+
+    <h4 style="background-color:rgb(241, 255, 183);" ><strong>Comentário recebido</strong></h4>
+
+        <% @comments.each do |comment| %>
+            <p>Nome: <%= comment.username %></p>
+            <p>Texto: <%= comment.body %></p>
+        <% end %>
+<% else %>
+        <p>Usuário não autorizado.</p>
 <% end %>
-
-<h3>Contra-proposta recebida</h3>
-
-<% @proposals.each do |proposal| %>
-    <p>Título: <%= proposal.title %></p>
-    <p>Texto: <%= proposal.body %></p>
-<% end %>
-
-<h3>Comentário recebido</h3>
-
-<% @comments.each do |comment| %>
-    <p>Nome: <%= comment.username %></p>
-    <p>Texto: <%= comment.body %></p>
-<% end %>
-
-<p><%= link_to 'Voltar', root_path %></p>

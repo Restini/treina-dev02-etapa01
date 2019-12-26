@@ -1,11 +1,11 @@
 <h3>Adicionar Comentário Headhunter</h3>
 
 <%= form_for( [@head_proposal, @head_proposal.head_comments.build] ) do |f| %>
-    <div>
+    <div class="form-group">
       <%= f.label :username, 'Nome' %>
       <%= f.text_field :username %>
     </div>
-    <div>
+    <div class="form-group">
       <%= f.label :body, 'Texto' %>
       <%= f.text_area :body %>
     </div>
