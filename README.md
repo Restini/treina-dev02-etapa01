@@ -1,6 +1,4 @@
-# README
-
-## About the project
+# About the project
 The project consists of a web platform for headhunters and candidates to relate around job openings. Applicants can create 
 a platform account to search for vacancies and apply for selection processes. Headhunters register their vacancies and 
 register candidates. From applying for an applicant to a vacancy, there can be a message exchange, appointment scheduling, 
