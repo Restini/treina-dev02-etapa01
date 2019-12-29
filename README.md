@@ -13,11 +13,12 @@ With all dependencies installed, run rails server and access localhost: 3000 in 
 With all dependencies installed, as described in the previous section, on your terminal run rspec.
 
 ## How to navigate the platform
-Browsing the platform will only be possible through one of the following users: :applicant (applicant@applicant.com), 
-:admin (admin@admin.com) or :headhunter (headhunter@headhunter.com). As 'applicant' you will only have access to the candidate
-profile, if 'headhunter' access to the headhunter profile and as 'admin' access control. If you register another type of user 
-will have access only to 'Home'.
+Create three users in Sign up: admin@admin.com, applicant@applicant.com and headhunter@headhunter.com. After users are created, change their 'hole' in 'rails console'; because the default is normal_user.
 
-Ps.: To view the messages, comments or feedbacks exchanged between 'candidate' and 'headhunter' you must log in and log out 
-to their respective users. Because messages sent by the headhunter are displayed on the candidate's panel; as well as those 
-of the candidate on the headhunter panel.
+* email: "admin@admin.com", role: "admin"
+* email: "applicant@applicant.com", role: "applicant"
+* email: "headhunter@headhunter.com", role: "headhunter"
+
+As 'admin' you will only have access to access control, as 'applicant' will have access to the candidate profile and 'headhunter' access to the headhunter profile. If you register another type of user will have access only to 'Home'.
+
+Ps.: To view the messages, comments or feedbacks exchanged between 'candidate' and 'headhunter' you must log in and log out to their respective users. Because messages sent by the headhunter are displayed on the candidate's panel; as well as those of the candidate on the headhunter's panel.
