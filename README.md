@@ -17,6 +17,6 @@ Create three users in Sign up: admin@admin.com, applicant@applicant.com and head
 * email: "applicant@applicant.com", role: "applicant"
 * email: "headhunter@headhunter.com", role: "headhunter"
 
-As 'admin' you will only have access to access control, as 'applicant' will have access to the candidate profile and 'headhunter' access to the headhunter profile. If you register another type of user will have access only to 'Home'.
+As 'admin' you will only have access to access control, as 'applicant' will have access to the applicant profile and 'headhunter' access to the headhunter profile. If you register another type of user will have access only to 'Home'.
 
-Ps.: To view the messages, comments or feedbacks exchanged between 'applicant' and 'headhunter' you must log in and log out to their respective users. Because messages sent by the headhunter are displayed on the candidate's panel; as well as those of the applicant on the headhunter's panel.
+Ps.: To view the messages, comments or feedbacks exchanged between 'applicant' and 'headhunter' you must log in and log out to their respective users. Because messages sent by the headhunter are displayed on the applicant's panel; as well as those of the applicant on the headhunter's panel.
