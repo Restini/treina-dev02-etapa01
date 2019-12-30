@@ -1,7 +1,8 @@
 require 'rails_helper'
 
-feature 'Applicant apply for job' do
+feature 'Headhunter see message' do
   scenario 'successfully' do
+    HeadProfile.create!(name:'Steve Jobs', company:'CampusCode')
     ApplicantProfile.create!(name:'Steve Jobs', social_name:'Jobs',
                              date_of_birth:'30/12/2019', education:'Superior', 
                              applicant_description:'Programador', 
@@ -9,21 +10,16 @@ feature 'Applicant apply for job' do
     Job.create!(title:'Programador', description:'Programador back-end', 
                 desired_skill:'Conhecimentos em Ruby', salary_range:'4000.00',
                 level:'Superior', deadline:'30/12/2019', region:'São Paulo')
-    user = User.create!(email:'applicant@applicant.com', password:'123456', role:3)
+    Proposal.create!(title:'Programador back-end',body:'Aceito sua proposta')
+    user = User.create!(email:'headhunter@headhunter.com', password:'123456', role:2)
     login_as(user, :scope => :user)
     
     visit root_path
-    click_on 'Perfil candidato'
-    click_on 'Vagas'
-    click_on 'Efetuar inscrição'
+    click_on 'Perfil'
     
-    fill_in 'Nome', with: 'Steve Jobs'
-    fill_in 'Email', with: 'applicant@applicant.com'
-    select 'Programador', from: 'Vaga'
-    click_on 'Enviar'
-
-    expect(page).to have_content('Steve Jobs')
-    expect(page).to have_content('applicant@applicant.com')
-    expect(page).to have_content('Programador')
+    expect(page).to have_content('Contra-proposta recebida')
+    expect(page).to have_content('Programador back-end')
+    expect(page).to have_content('Aceito sua proposta')
+    expect(page).to have_content('Comentário recebido')
    end
 end

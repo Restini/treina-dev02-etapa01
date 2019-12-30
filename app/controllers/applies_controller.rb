@@ -3,6 +3,7 @@ class AppliesController < ApplicationController
     
     def index
       @applies = Apply.all
+      @users = User.all
     end
 
     def show

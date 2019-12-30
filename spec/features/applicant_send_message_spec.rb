@@ -1,7 +1,8 @@
 require 'rails_helper'
 
-feature 'Applicant apply for job' do
+feature 'Applicant send message' do
   scenario 'successfully' do
+    HeadProfile.create!(name:'Steve Jobs', company:'CampusCode')
     ApplicantProfile.create!(name:'Steve Jobs', social_name:'Jobs',
                              date_of_birth:'30/12/2019', education:'Superior', 
                              applicant_description:'Programador', 
@@ -14,16 +15,14 @@ feature 'Applicant apply for job' do
     
     visit root_path
     click_on 'Perfil candidato'
-    click_on 'Vagas'
-    click_on 'Efetuar inscrição'
+    click_on 'Fazer proposta'
+    click_on 'Criar Proposta'
     
-    fill_in 'Nome', with: 'Steve Jobs'
-    fill_in 'Email', with: 'applicant@applicant.com'
-    select 'Programador', from: 'Vaga'
+    fill_in 'Título', with: 'Programador back-end'
+    fill_in 'Texto', with: 'Aceito sua proposta'
     click_on 'Enviar'
 
-    expect(page).to have_content('Steve Jobs')
-    expect(page).to have_content('applicant@applicant.com')
-    expect(page).to have_content('Programador')
+    expect(page).to have_content('Programador back-end')
+    expect(page).to have_content('Aceito sua proposta')
    end
 end
