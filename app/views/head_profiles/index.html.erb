@@ -1,4 +1,4 @@
-<% if policy(@head_profiles).index?%>
+<% if current_user.email == 'headhunter@headhunter.com' %>
 
     <h1>Painel de acesso</h1>
 
@@ -33,6 +33,9 @@
             <p>Nome: <%= comment.username %></p>
             <p>Texto: <%= comment.body %></p>
         <% end %>
+
 <% else %>
+
         <p>Usuário não autorizado.</p>
+
 <% end %>

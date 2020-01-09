@@ -11,11 +11,7 @@ With all dependencies installed, run rails server and access localhost: 3000 in 
 With all dependencies installed, as described in the previous section, on your terminal run rspec.
 
 ## How to navigate the platform
-Create three users in Sign up: admin@admin.com, applicant@applicant.com and headhunter@headhunter.com. After users are created, change their 'hole' in 'rails console'; because the default is normal_user.
-
-* email: "admin@admin.com", role: "admin"
-* email: "applicant@applicant.com", role: "applicant"
-* email: "headhunter@headhunter.com", role: "headhunter"
+Create three users in Sign up: admin@admin.com, applicant@applicant.com and headhunter@headhunter.com. 
 
 As 'admin' you will only have access to access control, as 'applicant' will have access to the applicant profile and 'headhunter' access to the headhunter profile. If you register another type of user will have access only to 'Home'.
 

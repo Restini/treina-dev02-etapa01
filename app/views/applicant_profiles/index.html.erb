@@ -1,5 +1,5 @@
-<% if policy(@applicant_profiles).index?%>
-
+<% if current_user.email == 'applicant@applicant.com' %>
+        
     <h1>Painel de acesso</h1>
 
     <% if @applicant_profiles.empty? %>
@@ -13,8 +13,9 @@
         <p><%= link_to 'Fazer proposta', proposals_path%></p>
         <p><%= link_to 'Responder proposta/comentário', proposals_path%></p>
 
-        <p><h2>Perfil</h2></p>
-        <% @applicant_profiles.each do |applicant_profile| %>
+    <p><h2>Perfil</h2></p>
+    
+    <% @applicant_profiles.each do |applicant_profile| %>
         <p>Nome: <%= applicant_profile.name %></p>
         <p>Nome social: <%= applicant_profile.social_name %></p>
         <p>Data de aniversário: <%= applicant_profile.date_of_birth %></p>
@@ -40,6 +41,9 @@
             <p>Nome: <%= comment.username %></p>
             <p>Mensagem: <%= comment.body %></p>
         <% end %>
-<% else %>
+
+  <% else %>
+
     <p>Usuário não autorizado.</p>
-<% end %>
+
+  <% end %>

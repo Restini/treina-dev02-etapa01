@@ -1,19 +1,28 @@
-<h2>Controle de acesso</h2>
+<% if current_user.email == 'admin@admin.com' %>
 
-<table>
-  <thead>
-    <tr>
-      <th><h3>E-mail</h3></th>
-      <th><h3>Role</h3></th>
-    </tr>
-  </thead>
+  <h2>Controle de acesso</h2>
 
-  <tbody>
-    <% @users.each do |user| %>
+  <table>
+    <thead>
       <tr>
-        <th ><%= user.email %></th>
-        <th ><%= user.role %></th>
+        <th><h3>E-mail</h3></th>
+        <th><h3>Role</h3></th>
       </tr>
-      <% end %>
-  <tbody>
-<table>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <th ><%= user.email %></th>
+          <th ><%= user.role %></th>
+        </tr>
+        <% end %>
+    <tbody>
+  <table>
+
+<% else %>
+
+  <p>Usuário não autorizado.</p>
+
+<% end %>
+
