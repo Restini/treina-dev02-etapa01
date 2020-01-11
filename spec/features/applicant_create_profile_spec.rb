@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'Applicant create profile' do
     scenario 'Applicant create profile' do
-        user = User.create!(email:'applicant@aplicant.com', password:'123456', role:3)
+        user = User.create!(email:'applicant@applicant.com', password:'123456', role:3)
         login_as(user, :scope => :user)
 
         visit root_path

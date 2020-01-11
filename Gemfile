@@ -17,8 +17,6 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 # Login authentication for users
 gem 'devise'
-# Authorization for users
-gem 'pundit'
 # Bootstrap layouts
 gem 'bootstrap-sass', '~> 3.4.1'
 # Javascript

@@ -23,7 +23,7 @@ feature 'Administrator view home page' do
     login_as(user, :scope => :user)
 
     visit root_path
-    click_on('Controle de acesso')
+    click_on('Perfil')
     
     expect(page).to have_content('Usuário não autorizado.')
   end

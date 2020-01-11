@@ -23,7 +23,7 @@ feature 'Headhunter view home page' do
     login_as(user, :scope => :user)
 
     visit root_path
-    click_on('Perfil')
+    click_on('Perfil candidato')
     
     expect(page).to have_content('Usuário não autorizado.')
   end

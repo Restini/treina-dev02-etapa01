@@ -8,7 +8,7 @@ feature 'Applicant view home page' do
   end 
     
   scenario 'Applicant do login' do
-    user = User.create!(email:'applicant@aplicant.com', password:'123456')
+    user = User.create!(email:'applicant@applicant.com', password:'123456')
     login_as(user, :scope => :user)
 
     visit root_path
@@ -19,17 +19,17 @@ feature 'Applicant view home page' do
   end
   
   scenario 'Applicant see message error' do
-    user = User.create!(email:'applicant@aplicant.com', password:'123456')
+    user = User.create!(email:'applicant@applicant.com', password:'123456')
     login_as(user, :scope => :user)
 
     visit root_path
-    click_on('Perfil candidato')
+    click_on('Perfil')
     
     expect(page).to have_content('Usuário não autorizado.')
   end
 
   scenario 'Applicant visit profile successfully' do
-    user = User.create!(email:'applicant@aplicant.com', password:'123456', role:3)
+    user = User.create!(email:'applicant@applicant.com', password:'123456', role:3)
     login_as(user, :scope => :user)
 
     visit root_path
