@@ -30,4 +30,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  welcome: "Welcome to Jobs"
+  sub_title: "Largest job site in Latin America"
+  headhunter: "Headhunter"
+  applicant: "Applicant"
+  admin: "Administrator"
+  

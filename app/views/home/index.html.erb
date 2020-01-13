@@ -1,11 +1,11 @@
-<h1><strong>BEM-VINDO ao Jobs</strong></h1>
-<h4>O maior site de empregos da América Latina</h4>
+<h1><strong><%= t('welcome') %></strong></h1>
+<h4><%= t('sub_title') %></h4>
 
-<p><h3>Headhunter</h3></p>
+<p><h3><%= t('headhunter') %></h3></p>
 <p><%= link_to 'Perfil', head_profiles_path%></p>
 
-<p><h3>Candidato</h3></p>
+<p><h3><%= t('applicant') %></h3></p>
 <p><%= link_to 'Perfil candidato', applicant_profiles_path%></p>
 
-<p><h3>Administrador</h3></p>
+<p><h3><%= t('admin') %></h3></p>
 <p><%= link_to 'Controle de acesso', control_users_path%></p>

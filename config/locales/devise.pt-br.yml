@@ -1,0 +1,8 @@
+pt-BR:
+     devise:  
+           sessions:
+             signed_in: "Conectado com sucesso."
+             signed_out: "Terminou sessão com sucesso."
+             already_signed_out: "Terminou sessão com sucesso."
+           failure:
+             unauthenticated: "Você precisa fazer login ou se inscrever antes de continuar."   
