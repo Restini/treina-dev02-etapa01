@@ -1,4 +1,27 @@
-<h2>Inscrição</h2>
+<h3>Vagas</h3>
+
+<% @jobs.each do |job| %>
+  <br>
+  <p><strong>Título: </strong><%= job.title %></p>
+  <p><strong>Descrição: </strong><%= job.description %></p>
+  <p><strong>Habilidades: </strong><%= job.desired_skill %></p>
+  <p><strong>Salário: </strong><%= job.salary_range %></p>
+  <p><strong>Nível: </strong><%= job.level %></p>
+  <p><strong>Data limite: </strong><%= job.deadline %></p>
+  <p><strong>Região: </strong><%= job.region %></p>
+<% end %>
+<br>
+
+<% if @apply.errors.any? %>
+    <p>Favor corrigir os seguintes erros</p>
+    <ul>
+    <% @apply.errors.full_messages.each do |message| %>
+      <p><li><%= message %></li></p>
+    <% end %>
+    </ul>
+<% end %>
+
+<h2>Efetuar inscrição</h2>
 
 <%= form_for apply do |f| %>
     <div class="form-group">
@@ -15,4 +38,4 @@
     </div>
       <%= f.submit 'Enviar' %>
 <% end %>
-  
+<br>

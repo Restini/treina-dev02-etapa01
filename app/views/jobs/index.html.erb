@@ -1,4 +1,4 @@
-<h1>Vagas</h1>
+<h2>Vagas</h2>
 
 <p><%= link_to 'Criar vaga', new_job_path %></p>
 
@@ -7,15 +7,16 @@
 <% end %>
 
 <% @jobs.each do |job| %>
-  <p>Titulo: <%= job.title %></p>
-  <p>Descrição: <%= job.description %></p>
-  <p>Habilidades: <%= job.desired_skill %></p>
-  <p>Faixa Salarial: <%= job.salary_range %></p>
-  <p>Nível: <%= job.level %></p>
-  <p>Data Limite: <%= job.deadline %></p>
-  <p>Região: <%= job.region %></p>
+  <p><strong>Título: </strong><%= job.title %></p>
+  <p><strong>Descrição: </strong><%= job.description %></p>
+  <p><strong>Habilidades: </strong><%= job.desired_skill %></p>
+  <p><strong>Faixa Salarial: </strong><%= job.salary_range %></p>
+  <p><strong>Nível: </strong><%= job.level %></p>
+  <p><strong>Data Limite: </strong><%= job.deadline %></p>
+  <p><strong>Região: </strong><%= job.region %></p>
   <p><%= link_to 'Editar vaga', edit_job_path(job) %></p>
   <p><%= link_to 'Deletar vaga', job_path(job), method: :delete %></p>
+  <br>
 <% end %>
 
 <p><%= link_to 'Voltar', head_profiles_path %></p>

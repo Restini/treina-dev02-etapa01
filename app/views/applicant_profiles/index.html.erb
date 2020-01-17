@@ -1,5 +1,5 @@
 <% if current_user.email == 'applicant@applicant.com' %>
-        
+
     <h1>Painel de acesso</h1>
 
     <% if @applicant_profiles.empty? %>
@@ -7,7 +7,7 @@
         <p>Para ter acesso às vagas, favor cadastrar perfil.</p>
         <p><%= link_to 'Criar perfil', new_applicant_profile_path %></p>
     <% else %>
-        <p><%= link_to 'Vagas', applies_path %></p>
+        <p><%= link_to 'Vagas', new_apply_path %></p>
         <p><%= link_to 'Inscrições efetuadas', applies_path%></p>
         
         <p><%= link_to 'Fazer proposta', proposals_path%></p>
@@ -25,6 +25,7 @@
         
         <p><%= link_to 'Editar perfil', edit_applicant_profile_path(applicant_profile) %></p>
         <p><%= link_to 'Deletar perfil', applicant_profile_path(applicant_profile), method: :delete %></p>
+        <br>
         <% end %>
     <% end %>
 
@@ -34,14 +35,14 @@
             <p>Título: <%= proposal.title %></p>
             <p>Mensagem: <%= proposal.body %></p>
         <% end %>  
-
+    <br>
     <h4 style="background-color:rgb(241, 255, 183);" ><strong>Comentário recebido</strong></h4>
     
         <% @head_comments.each do |comment| %>
             <p>Nome: <%= comment.username %></p>
             <p>Mensagem: <%= comment.body %></p>
         <% end %>
-
+    <br>
   <% else %>
 
     <p>Usuário não autorizado.</p>

@@ -17,6 +17,7 @@
         <p>Empresa: <%= head_profile.company %></p>
         <p><%= link_to 'Editar perfil', edit_head_profile_path(head_profile) %></p>
         <p><%= link_to 'Deletar perfil', head_profile_path(head_profile), method: :delete %></p>
+        <br>
         <% end %>
     <% end %>
 
@@ -26,14 +27,14 @@
             <p>Título: <%= proposal.title %></p>
             <p>Texto: <%= proposal.body %></p>
         <% end %>
-
+    <br>
     <h4 style="background-color:rgb(241, 255, 183);" ><strong>Comentário recebido</strong></h4>
 
         <% @comments.each do |comment| %>
             <p>Nome: <%= comment.username %></p>
             <p>Texto: <%= comment.body %></p>
         <% end %>
-
+    <br>
 <% else %>
 
         <p>Usuário não autorizado.</p>

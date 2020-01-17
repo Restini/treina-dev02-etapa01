@@ -16,7 +16,7 @@ feature 'Headhunter register job' do
     fill_in 'Habilidades desejadas', with: 'Conhecimentos em Ruby'
     fill_in 'Faixa Salarial', with: '4000.00'
     fill_in 'Nível', with: 'Superior'
-    fill_in 'Data limite', with: '30/12/2019'
+    fill_in 'Data limite', with: '20/01/2021'
     fill_in 'Região', with: 'São Paulo'
     click_on 'Enviar'
 

@@ -13,6 +13,6 @@ class ApplicantProfile < ApplicationRecord
           errors.add(:date_of_birth, 'deve ser menor que a data de hoje.')
         end
     end
-
+    
 end
   

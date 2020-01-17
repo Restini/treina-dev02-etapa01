@@ -9,7 +9,7 @@ feature 'Headhunter see message' do
                              experience:'5 anos')
     Job.create!(title:'Programador', description:'Programador back-end', 
                 desired_skill:'Conhecimentos em Ruby', salary_range:'4000.00',
-                level:'Superior', deadline:'30/12/2019', region:'São Paulo')
+                level:'Superior', deadline:'20/01/2021', region:'São Paulo')
     Proposal.create!(title:'Programador back-end',body:'Aceito sua proposta')
     user = User.create!(email:'headhunter@headhunter.com', password:'123456', role:2)
     login_as(user, :scope => :user)

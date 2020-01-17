@@ -16,6 +16,7 @@ class AppliesController < ApplicationController
     end
 
     def create
+      @jobs = Job.all
       @apply = Apply.new(apply_params)
             
       if @apply.save

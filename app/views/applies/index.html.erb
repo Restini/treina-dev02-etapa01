@@ -1,33 +1,36 @@
 <% if current_user.email == 'applicant@applicant.com' %>
-  <h1>Inscrição</h1>
   
-  <p><%= link_to 'Efetuar inscrição', new_apply_path %></p>
-
   <% if @applies.empty? %>
     <p>Nenhuma inscrição efetuada.</p>
   <% else %>
     <h3>Inscrições efetuadas</h3>
+    <br>
     <% @applies.each do |apply| %>
       <p>Nome: <%= apply.applicant_name %></p>
       <p>Email: <%= apply.email %></p>
       <p>Vaga: <%= apply.job.title %></p>
       <p><%= link_to 'Deletar candidatura', apply_path(apply), method: :delete %></p>
+      <br>
     <% end %>
+      <p><%= link_to 'Voltar', applicant_profiles_path %></p>
   <% end %>
-
+  
 <% else %>
   
   <% if @applies.empty? %>
     <p>Nenhuma inscrição efetuada.</p>
   <% else %>
-    <h1>Inscrições efetuadas</h1>
+    <h2>Candidatos cadastrados</h2>
+    <br>
     <% @applies.each do |apply| %>
       <p>Nome: <%= apply.applicant_name %></p>
       <p>Email: <%= apply.email %></p>
       <p>Vaga: <%= apply.job.title %></p>
       <p><input type="radio" checked="checked"/> Selecionar perfil</p>
       <p><%= link_to 'Deletar candidatura', apply_path(apply), method: :delete %></p>
+      <br>
     <% end %>
+    <p><%= link_to 'Voltar', head_profiles_path %></p>
   <% end %>
 
 <% end %>
